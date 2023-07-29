@@ -1,0 +1,123 @@
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\Sports.exe.config
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\Sports.exe
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\Sports.pdb
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\CommonServiceLocator.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\EntityFramework.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\EntityFramework.xml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.csproj.AssemblyReference.cache
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.csproj.SuggestedBindingRedirects.cache
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\MainWindow.g.cs
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Windows\Login.g.cs
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\App.g.cs
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports_Content.g.cs
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports_MarkupCompile.cache
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports_MarkupCompile.lref
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\App.baml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\MainWindow.baml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Windows\Login.baml
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.g.resources
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.Properties.Resources.resources
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.csproj.GenerateResource.cache
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.csproj.CoreCompileInputs.cache
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.csproj.CopyComplete
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.exe
+C:\Users\14256\Desktop\新建文件夹 (2)\Sports\Sports\obj\Debug\Sports.pdb
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.csproj.AssemblyReference.cache
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.csproj.SuggestedBindingRedirects.cache
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Resource\CommonDictionary.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Resource\ExpanderDictionary1.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Resource\ToggleButtonStyle.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Control\ButtonCard.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\MainWindow.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\MatchView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PlayerView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\RefereeView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditMatch.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditPassword.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Login.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Register.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\App.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports_Content.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports_MarkupCompile.cache
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports_MarkupCompile.lref
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Sports.exe.config
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Sports.exe
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Sports.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\CommonServiceLocator.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\EntityFramework.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\MaterialDesignColors.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\EntityFramework.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\MaterialDesignColors.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\IndexView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\App.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Control\ButtonCard.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\MainWindow.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\IndexView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\MatchView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PlayerView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\RefereeView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditMatch.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditPassword.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Login.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Register.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.g.resources
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.Properties.Resources.resources
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.csproj.GenerateResource.cache
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.csproj.CoreCompileInputs.cache
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.csproj.CopyComplete
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.exe
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.pdb
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditReferee.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditReferee.baml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Sports.exe.manifest
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Sports.application
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.exe.manifest
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Sports.application
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\RegistrationView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\RegistrationView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\ClassView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\ClassView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Numcin.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\Numcin.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PostView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PostView.baml
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Z.EntityFramework.Extensions.dll
+C:\Users\14256\Desktop\Sports\Sports\bin\Debug\Z.EntityFramework.Extensions.xml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PrizeTableView.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\View\PrizeTableView.baml
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditP.g.cs
+C:\Users\14256\Desktop\Sports\Sports\obj\Debug\Windows\EditP.baml

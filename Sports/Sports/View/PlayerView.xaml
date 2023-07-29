@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Sports.View.PlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sports.View"
+             xmlns:converters="clr-namespace:Sports.Converter"
+             mc:Ignorable="d" 
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            DataContext="{Binding Source={ StaticResource Locator},Path=Player}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:RadioButtonCvt x:Key="RadioButtonCvt"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="auto"/>
+            <RowDefinition  Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Background="AntiqueWhite" Orientation="Horizontal">
+            <TextBlock Text="🏚️ " FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="首页&gt;运动员"/><Run Language="zh-cn" Text="报名"/></TextBlock>
+        </StackPanel>
+        <!--增加-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30 "/>
+
+                <RowDefinition  Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Background="Cornsilk">
+                <TextBlock Text="添加数据" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                <TextBlock HorizontalAlignment="Right" FontSize="18">如查找不到请刷新试试</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1" Height="auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="auto"></RowDefinition>
+                    <RowDefinition  Height="auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <TextBlock VerticalAlignment="Center" FontSize="20" Text="学号:" ></TextBlock>
+                    <TextBox  InputMethod.IsInputMethodEnabled="False"
+                            PreviewTextInput="TextBox_PreviewTextInput"    
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                              
+Height="40" 
+  Margin="0 0 10 0 " Text="{Binding Athlete.SNO, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100"  />
+                    <TextBlock  Margin="20" FontSize="20" VerticalAlignment="Center"> 名字:</TextBlock>
+                    <TextBlock  x:Name="AthleteNames" Height="30" Width="100"   FontSize="20" ></TextBlock>
+                    <TextBlock Grid.Column="0"  Margin="20,0,20,0" FontSize="20"  VerticalAlignment="Center">性别:</TextBlock>
+                    <TextBlock x:Name="AthleteGnder" Grid.Column="0"  Text="" FontSize="20"  VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="0"  Margin="20,0,20,0" FontSize="20"  VerticalAlignment="Center"> 班级:</TextBlock>
+                    <TextBlock x:Name="AthleteClass" Grid.Column="0"  Text="" FontSize="20"  VerticalAlignment="Center"></TextBlock>
+                    <Button   Command="{Binding ChangeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PlayerView}}"  Margin=" 100 10 10 10" Width="70"  Content="查询"/>
+                </StackPanel>
+                <Grid   Grid.Row="1" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                      
+                    </Grid.ColumnDefinitions>
+                    <StackPanel   HorizontalAlignment="Center" Margin="20,20,20,20" Orientation="Horizontal" >
+
+                        <TextBlock  Margin="20" FontSize="20" VerticalAlignment="Center"> 比赛:</TextBlock>
+                        <ComboBox  Margin="20" Height="30" Width="100"  ItemsSource="{Binding MatchTables,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  DisplayMemberPath="MatchName" SelectedValuePath="MatchID" SelectedValue="{Binding Athlete.MatchID}" ></ComboBox>
+                        <Button   Width="70" HorizontalAlignment="Left"  Command="{Binding RECommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:PlayerView}}" Content="刷新" Margin="20"/>
+
+                        <Button     Command="{Binding AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PlayerView}}" Margin="20" Width="70" HorizontalAlignment="Right"  Content="报名"/>
+
+                    </StackPanel>
+
+                    <Button  Content="Print" Click="OnDataGridPrinting"  Width="80" Height="30" Margin="645,39,75,43" />
+
+                </Grid>
+
+            </Grid>
+
+
+
+        </Grid>
+        <Grid Grid.Row="2">
+ 
+            <DataGrid IsReadOnly="True"  Name="datagrid1" ItemsSource="{Binding AthleteTables}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="报名ID" Binding="{Binding AthleteMatchID}"/>
+                    <DataGridTextColumn Header="班级" Binding="{Binding   ClassTable.ClassName}"/>
+                    <DataGridTextColumn Header="学号" Binding="{Binding SNO}"/>
+                    <DataGridTextColumn Header="名字" Binding="{Binding  AthleteName}"/>
+                    <DataGridTextColumn Header="运动员ID" Binding="{Binding  RegistrationTable.AthleteID}"/>
+                    <DataGridTextColumn Header="比赛名字" Binding="{Binding   MatchTable.MatchName}"/>
+                    <DataGridTextColumn Header="性别" Binding="{Binding Gender}"></DataGridTextColumn>
+
+                    <DataGridTextColumn Header="备注" Binding="{Binding PS}"></DataGridTextColumn>
+
+
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+    </Grid>
+</UserControl>

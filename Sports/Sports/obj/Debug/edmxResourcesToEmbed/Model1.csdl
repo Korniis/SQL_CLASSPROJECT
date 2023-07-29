@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AthleteTable">
+    <Key>
+      <PropertyRef Name="AthleteMatchID" />
+    </Key>
+    <Property Name="AthleteMatchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AthleteName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SNO" Type="Int32" Nullable="false" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <Property Name="Grade" Type="Double" />
+    <Property Name="PrizeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClassTable" Relationship="Self.FK_AthleteTable_ClassTable" FromRole="AthleteTable" ToRole="ClassTable" />
+    <NavigationProperty Name="MatchTable" Relationship="Self.FK_AthleteTable_MatchTable" FromRole="AthleteTable" ToRole="MatchTable" />
+    <NavigationProperty Name="RegistrationTable" Relationship="Self.FK_AthleteTable_RegistrationTable" FromRole="AthleteTable" ToRole="RegistrationTable" />
+  </EntityType>
+  <EntityType Name="ClassTable">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClassSize" Type="Int32" Nullable="false" />
+    <Property Name="ClassScore" Type="Int32" />
+    <NavigationProperty Name="AthleteTable" Relationship="Self.FK_AthleteTable_ClassTable" FromRole="ClassTable" ToRole="AthleteTable" />
+    <NavigationProperty Name="RegistrationTable" Relationship="Self.FK_RegistrationTable_ClassTable" FromRole="ClassTable" ToRole="RegistrationTable" />
+  </EntityType>
+  <EntityType Name="LocationTable">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="LocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocationTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MatchTable" Relationship="Self.FK_MatchTable_LocationTable" FromRole="LocationTable" ToRole="MatchTable" />
+  </EntityType>
+  <EntityType Name="MatchTable">
+    <Key>
+      <PropertyRef Name="MatchID" />
+    </Key>
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <Property Name="MatchName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="MatchType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MatchRule" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Max" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AthleteTable" Relationship="Self.FK_AthleteTable_MatchTable" FromRole="MatchTable" ToRole="AthleteTable" />
+    <NavigationProperty Name="LocationTable" Relationship="Self.FK_MatchTable_LocationTable" FromRole="MatchTable" ToRole="LocationTable" />
+    <NavigationProperty Name="PrizeTable" Relationship="Self.FK_PrizeTable_MatchTable" FromRole="MatchTable" ToRole="PrizeTable" />
+    <NavigationProperty Name="RefereeTable" Relationship="Self.FK_RefereeTable_MatchTable" FromRole="MatchTable" ToRole="RefereeTable" />
+    <NavigationProperty Name="ScoreTable" Relationship="Self.FK_ScoreTable_MatchTable" FromRole="MatchTable" ToRole="ScoreTable" />
+  </EntityType>
+  <EntityType Name="PrizeTable">
+    <Key>
+      <PropertyRef Name="PrizeID" />
+    </Key>
+    <Property Name="PrizeID" Type="Int32" Nullable="false" />
+    <Property Name="PrizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrizeLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MatchTable" Relationship="Self.FK_PrizeTable_MatchTable" FromRole="PrizeTable" ToRole="MatchTable" />
+  </EntityType>
+  <EntityType Name="RefereeTable">
+    <Key>
+      <PropertyRef Name="RefereeID" />
+    </Key>
+    <Property Name="RefereeID" Type="Int32" Nullable="false" />
+    <Property Name="RefereeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <Property Name="PS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MatchTable" Relationship="Self.FK_RefereeTable_MatchTable" FromRole="RefereeTable" ToRole="MatchTable" />
+  </EntityType>
+  <EntityType Name="RegistrationTable">
+    <Key>
+      <PropertyRef Name="SNO" />
+    </Key>
+    <Property Name="SNO" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AthleteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="RegistrationTime" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AthleteTable" Relationship="Self.FK_AthleteTable_RegistrationTable" FromRole="RegistrationTable" ToRole="AthleteTable" />
+    <NavigationProperty Name="ClassTable" Relationship="Self.FK_RegistrationTable_ClassTable" FromRole="RegistrationTable" ToRole="ClassTable" />
+  </EntityType>
+  <EntityType Name="ScoreTable">
+    <Key>
+      <PropertyRef Name="ScoreID" />
+    </Key>
+    <Property Name="ScoreID" Type="Int32" Nullable="false" />
+    <Property Name="AthleteID" Type="Int32" Nullable="false" />
+    <Property Name="MatchID" Type="Int32" Nullable="false" />
+    <Property Name="Score" Type="Double" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MatchTable" Relationship="Self.FK_ScoreTable_MatchTable" FromRole="ScoreTable" ToRole="MatchTable" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Admin" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AthleteTable_ClassTable">
+    <End Role="ClassTable" Type="Self.ClassTable" Multiplicity="1" />
+    <End Role="AthleteTable" Type="Self.AthleteTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassTable">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="AthleteTable">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AthleteTable_MatchTable">
+    <End Role="MatchTable" Type="Self.MatchTable" Multiplicity="1" />
+    <End Role="AthleteTable" Type="Self.AthleteTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchTable">
+        <PropertyRef Name="MatchID" />
+      </Principal>
+      <Dependent Role="AthleteTable">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AthleteTable_RegistrationTable">
+    <End Role="RegistrationTable" Type="Self.RegistrationTable" Multiplicity="1" />
+    <End Role="AthleteTable" Type="Self.AthleteTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegistrationTable">
+        <PropertyRef Name="SNO" />
+      </Principal>
+      <Dependent Role="AthleteTable">
+        <PropertyRef Name="SNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistrationTable_ClassTable">
+    <End Role="ClassTable" Type="Self.ClassTable" Multiplicity="1" />
+    <End Role="RegistrationTable" Type="Self.RegistrationTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassTable">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="RegistrationTable">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchTable_LocationTable">
+    <End Role="LocationTable" Type="Self.LocationTable" Multiplicity="1" />
+    <End Role="MatchTable" Type="Self.MatchTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationTable">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="MatchTable">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PrizeTable_MatchTable">
+    <End Role="MatchTable" Type="Self.MatchTable" Multiplicity="1" />
+    <End Role="PrizeTable" Type="Self.PrizeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchTable">
+        <PropertyRef Name="MatchID" />
+      </Principal>
+      <Dependent Role="PrizeTable">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefereeTable_MatchTable">
+    <End Role="MatchTable" Type="Self.MatchTable" Multiplicity="1" />
+    <End Role="RefereeTable" Type="Self.RefereeTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchTable">
+        <PropertyRef Name="MatchID" />
+      </Principal>
+      <Dependent Role="RefereeTable">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScoreTable_MatchTable">
+    <End Role="MatchTable" Type="Self.MatchTable" Multiplicity="1" />
+    <End Role="ScoreTable" Type="Self.ScoreTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchTable">
+        <PropertyRef Name="MatchID" />
+      </Principal>
+      <Dependent Role="ScoreTable">
+        <PropertyRef Name="MatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SportsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AthleteTable" EntityType="Self.AthleteTable" />
+    <EntitySet Name="ClassTable" EntityType="Self.ClassTable" />
+    <EntitySet Name="LocationTable" EntityType="Self.LocationTable" />
+    <EntitySet Name="MatchTable" EntityType="Self.MatchTable" />
+    <EntitySet Name="PrizeTable" EntityType="Self.PrizeTable" />
+    <EntitySet Name="RefereeTable" EntityType="Self.RefereeTable" />
+    <EntitySet Name="RegistrationTable" EntityType="Self.RegistrationTable" />
+    <EntitySet Name="ScoreTable" EntityType="Self.ScoreTable" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
+    <AssociationSet Name="FK_AthleteTable_ClassTable" Association="Self.FK_AthleteTable_ClassTable">
+      <End Role="ClassTable" EntitySet="ClassTable" />
+      <End Role="AthleteTable" EntitySet="AthleteTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AthleteTable_MatchTable" Association="Self.FK_AthleteTable_MatchTable">
+      <End Role="MatchTable" EntitySet="MatchTable" />
+      <End Role="AthleteTable" EntitySet="AthleteTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AthleteTable_RegistrationTable" Association="Self.FK_AthleteTable_RegistrationTable">
+      <End Role="RegistrationTable" EntitySet="RegistrationTable" />
+      <End Role="AthleteTable" EntitySet="AthleteTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistrationTable_ClassTable" Association="Self.FK_RegistrationTable_ClassTable">
+      <End Role="ClassTable" EntitySet="ClassTable" />
+      <End Role="RegistrationTable" EntitySet="RegistrationTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchTable_LocationTable" Association="Self.FK_MatchTable_LocationTable">
+      <End Role="LocationTable" EntitySet="LocationTable" />
+      <End Role="MatchTable" EntitySet="MatchTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PrizeTable_MatchTable" Association="Self.FK_PrizeTable_MatchTable">
+      <End Role="MatchTable" EntitySet="MatchTable" />
+      <End Role="PrizeTable" EntitySet="PrizeTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefereeTable_MatchTable" Association="Self.FK_RefereeTable_MatchTable">
+      <End Role="MatchTable" EntitySet="MatchTable" />
+      <End Role="RefereeTable" EntitySet="RefereeTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScoreTable_MatchTable" Association="Self.FK_ScoreTable_MatchTable">
+      <End Role="MatchTable" EntitySet="MatchTable" />
+      <End Role="ScoreTable" EntitySet="ScoreTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

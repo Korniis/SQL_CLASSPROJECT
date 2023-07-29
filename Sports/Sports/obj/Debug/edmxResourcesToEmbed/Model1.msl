@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SportsDBModelStoreContainer" CdmEntityContainer="SportsDBEntities">
+    <EntitySetMapping Name="AthleteTable">
+      <EntityTypeMapping TypeName="SportsDBModel.AthleteTable">
+        <MappingFragment StoreEntitySet="AthleteTable">
+          <ScalarProperty Name="AthleteMatchID" ColumnName="AthleteMatchID" />
+          <ScalarProperty Name="AthleteName" ColumnName="AthleteName" />
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="PrizeID" ColumnName="PrizeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassTable">
+      <EntityTypeMapping TypeName="SportsDBModel.ClassTable">
+        <MappingFragment StoreEntitySet="ClassTable">
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClassSize" ColumnName="ClassSize" />
+          <ScalarProperty Name="ClassScore" ColumnName="ClassScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTable">
+      <EntityTypeMapping TypeName="SportsDBModel.LocationTable">
+        <MappingFragment StoreEntitySet="LocationTable">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationTime" ColumnName="LocationTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchTable">
+      <EntityTypeMapping TypeName="SportsDBModel.MatchTable">
+        <MappingFragment StoreEntitySet="MatchTable">
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="MatchName" ColumnName="MatchName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="MatchType" ColumnName="MatchType" />
+          <ScalarProperty Name="MatchRule" ColumnName="MatchRule" />
+          <ScalarProperty Name="Max" ColumnName="Max" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrizeTable">
+      <EntityTypeMapping TypeName="SportsDBModel.PrizeTable">
+        <MappingFragment StoreEntitySet="PrizeTable">
+          <ScalarProperty Name="PrizeID" ColumnName="PrizeID" />
+          <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+          <ScalarProperty Name="PrizeLevel" ColumnName="PrizeLevel" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefereeTable">
+      <EntityTypeMapping TypeName="SportsDBModel.RefereeTable">
+        <MappingFragment StoreEntitySet="RefereeTable">
+          <ScalarProperty Name="RefereeID" ColumnName="RefereeID" />
+          <ScalarProperty Name="RefereeName" ColumnName="RefereeName" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="PS" ColumnName="PS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationTable">
+      <EntityTypeMapping TypeName="SportsDBModel.RegistrationTable">
+        <MappingFragment StoreEntitySet="RegistrationTable">
+          <ScalarProperty Name="SNO" ColumnName="SNO" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AthleteID" ColumnName="AthleteID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="RegistrationTime" ColumnName="RegistrationTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoreTable">
+      <EntityTypeMapping TypeName="SportsDBModel.ScoreTable">
+        <MappingFragment StoreEntitySet="ScoreTable">
+          <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
+          <ScalarProperty Name="AthleteID" ColumnName="AthleteID" />
+          <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SportsDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

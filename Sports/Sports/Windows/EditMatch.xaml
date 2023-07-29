@@ -1,0 +1,93 @@
+﻿<Window x:Class="Sports.Windows.EditMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sports.Windows"
+        WindowStartupLocation="CenterOwner"
+        DataContext="{Binding Source={StaticResource Locator},Path=EditMatch}"
+               xmlns:converters="clr-namespace:Sports.Converter"
+
+        mc:Ignorable="d"
+        Title="EditMatch" Height="200" Width="500">
+    <Window.Resources>
+        <converters:RadioButtonCvt x:Key="RadioButtonCvt"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+
+            <Grid Grid.Row="0" VerticalAlignment="Top" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="102*"/>
+                    <ColumnDefinition Width="114*"/>
+                    <ColumnDefinition Width="139*"/>
+                    <ColumnDefinition Width="445*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+
+                    <TextBlock Margin="0 0 0 0" FontSize="20"><Run Text="项目"/><Run Language="zh-cn" Text="编号"/><Run Text=":"/></TextBlock>
+
+                    <TextBox IsReadOnly="True" Name="Num" 
+                             InputMethod.IsInputMethodEnabled="False"
+                            PreviewTextInput="TextBox_PreviewTextInput" 
+                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+
+  Margin="0 0 10 0 " HorizontalAlignment="Left" Text="{Binding MatchType.MatchID, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+
+                    <TextBlock Margin="0 0 0 0" FontSize="20"><Run Text="项目"/><Run Language="zh-cn" Text="名称"/><Run Text=":"/></TextBlock>
+
+                    <TextBox
+
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 0 10 0 " HorizontalAlignment="Left" Text="{Binding MatchType.MatchName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="100" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Margin="0 0 0 0" Text="性别:" FontSize="20"/>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton IsChecked="{Binding MatchType.Gender, Converter={StaticResource  RadioButtonCvt },ConverterParameter=男}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="男" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+                        <RadioButton IsChecked="{Binding MatchType.Gender, Converter={StaticResource  RadioButtonCvt },ConverterParameter=女}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="女" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="3">
+                    <TextBlock Margin="0 0 10 0" Text="项目备注:" FontSize="20"/>
+                    <TextBox Height="40"
+    VerticalAlignment="Top"
+  FontSize="15"
+  
+
+    TextWrapping="Wrap"
+    VerticalScrollBarVisibility="Auto"  Text="{Binding MatchType.MatchType}" ></TextBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="2" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=local:EditMatch}}" Command="{Binding EditCommand}"  VerticalAlignment="Center" Content="修改" Height="48" Margin="0,0,4,0" />
+            <TextBlock Margin="0 0 0 0" Text="结束:" FontSize="20"/>
+            <StackPanel Orientation="Horizontal" Cursor="">
+                <RadioButton IsChecked="{Binding MatchType.MatchRule, Converter={StaticResource  RadioButtonCvt },ConverterParameter=Y}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="Y" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+                <RadioButton IsChecked="{Binding MatchType.MatchRule, Converter={StaticResource  RadioButtonCvt },ConverterParameter=N}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="N" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <TextBlock Text="最大人数:" FontSize="20"></TextBlock>
+                <TextBox  InputMethod.IsInputMethodEnabled="False"
+                            PreviewTextInput="TextBox_PreviewTextInput"  Margin="0 20 " Text="{Binding MatchType.Max}"/>
+
+            </StackPanel>
+        
+            
+        </Grid>
+    </Grid>
+</Window>

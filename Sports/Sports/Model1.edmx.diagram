@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7230faa950984a41a9ea4e66c484361f" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="SportsDBModel.AthleteTable" Width="1.5" PointX="12" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.ClassTable" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.LocationTable" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.MatchTable" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.PrizeTable" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.RefereeTable" Width="1.5" PointX="14.375" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.RegistrationTable" Width="1.5" PointX="5.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.ScoreTable" Width="1.5" PointX="14.375" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.sysdiagrams" Width="1.5" PointX="14.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.UserInfo" Width="1.5" PointX="14.5" PointY="3.5" IsExpanded="true" />
+        <AssociationConnector Association="SportsDBModel.FK_AthleteTable_ClassTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_AthleteTable_MatchTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_AthleteTable_RegistrationTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_RegistrationTable_ClassTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_MatchTable_LocationTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_PrizeTable_MatchTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_RefereeTable_MatchTable" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsDBModel.FK_ScoreTable_MatchTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

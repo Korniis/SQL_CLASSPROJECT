@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="Sports.View.RefereeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sports.View"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             DataContext="{Binding Source={ StaticResource Locator},Path=Referee}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 50"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="AntiqueWhite" Orientation="Horizontal">
+            <TextBlock Text="🏚️ " FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="首页&gt;"/><Run Language="zh-cn" Text=" 裁判"/><Run Text="报名"/></TextBlock>
+        </StackPanel>
+        <!--增加-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30 "/>
+
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="Cornsilk">
+                <TextBlock Text="添加数据" VerticalAlignment="Center" FontSize="18"></TextBlock>
+            </Border>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                <TextBlock VerticalAlignment="Center" FontSize="20">ID:</TextBlock>
+                <TextBox Width="80" Height="20" Margin="10" VerticalAlignment="Center" 
+                         InputMethod.IsInputMethodEnabled="False"
+                      
+                         Text="{Binding Referee.RefereeID, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock VerticalAlignment="Center" FontSize="20" >名字:</TextBlock>
+                <TextBox Width="80" Height="27" Margin="10" VerticalAlignment="Center" Text="{Binding Referee.RefereeName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock VerticalAlignment="Center" DockPanel.Dock="Left"  FontSize="20" >备注:</TextBlock>
+                <TextBox  Margin="10"  materialDesign:HintAssist.Hint="联系方式 QQ 微信" Text="{Binding Referee.PS , Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="24" Width="400"/>
+                <Button Width="60" Command="{Binding AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=local:RefereeView} }"  >添加</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+
+            <DataGrid IsReadOnly="True"  ItemsSource="{Binding RefereeTables}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding RefereeID}"/>
+                    <DataGridTextColumn Header="名称" Binding="{Binding  RefereeName}"/>
+
+                    <DataGridTextColumn Header="比赛名字" Binding="{Binding   MatchTable.MatchName}"/>
+                    <DataGridTextColumn Header="备注" Binding="{Binding PS}"></DataGridTextColumn>
+
+
+
+
+                    <DataGridTemplateColumn  Header="change">
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="分配" Background="AliceBlue"
+                                          CommandParameter="{Binding RelativeSource= { RelativeSource Mode=Self}}"
+                                          Command ="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:RefereeView},Path=DataContext.EditCommand}"
+                                           Tag="{Binding}" ></Button>
+                                    <Button Content="删除" Background="AliceBlue"
+                                              CommandParameter="{Binding RelativeSource= { RelativeSource Mode=Self}}"
+                                          Command ="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:RefereeView},Path=DataContext.DeleteCommand}"
+                                           Tag="{Binding}"></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

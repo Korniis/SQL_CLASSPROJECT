@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Sports.View.RegistrationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sports.View"
+             mc:Ignorable="d" 
+            xmlns:converters="clr-namespace:Sports.Converter"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          DataContext="{Binding Source={ StaticResource Locator},Path=Registration}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:RadioButtonCvt x:Key="RadioButtonCvt"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" 50"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="AntiqueWhite" Orientation="Horizontal">
+            <TextBlock Text="🏚️ " FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+            <TextBlock FontSize="23" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="首页&gt;"/><Run Language="zh-cn" Text="运动员注册"/><Run Text=""/></TextBlock>
+        </StackPanel>
+        <!--增加-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30 "/>
+
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="Cornsilk">
+                <TextBlock Text="添加数据" VerticalAlignment="Center" FontSize="18"></TextBlock>
+            </Border>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                <TextBlock VerticalAlignment="Center" FontSize="20">学号:</TextBlock>
+                <TextBox Width="80" Height="20" Margin="10" VerticalAlignment="Center" 
+                        
+                       InputMethod.IsInputMethodEnabled="False"
+                            PreviewTextInput="TextBox_PreviewTextInput"    
+                         Text="{Binding Registration.SNO, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock VerticalAlignment="Center" FontSize="20" >名字:</TextBlock>
+                <TextBox Width="80" Height="27" Margin="10" VerticalAlignment="Center" Text="{Binding Registration.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <TextBlock VerticalAlignment="Center" FontSize="20" > 班级:</TextBlock>
+            <ComboBox  Height="30" Width="100"  ItemsSource="{Binding ClassTables }" DisplayMemberPath="ClassName" SelectedValuePath="ClassID" SelectedValue="{Binding Registration.ClassID}"></ComboBox>
+                <TextBlock VerticalAlignment="Center" FontSize="20" >性别:</TextBlock>
+                
+                <RadioButton   Grid.Column="1" IsChecked="{Binding Registration.Gender, Converter={StaticResource  RadioButtonCvt },ConverterParameter=男}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="男" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+                <RadioButton  Margin="0 0 20 0" Grid.Column="2" IsChecked="{Binding Registration.Gender, Converter={StaticResource  RadioButtonCvt },ConverterParameter=女}" VerticalAlignment="Center"  FontSize=" 20" VerticalContentAlignment="Center" Content="女" HorizontalAlignment="Left" GroupName="sex"></RadioButton>
+                <Button Width="60" Command="{Binding AddCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=local:RegistrationView} }"  >添加</Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+
+            <DataGrid IsReadOnly="True"  ItemsSource="{Binding RegistrationTables}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="学号" Binding="{Binding  SNO}"/>
+                    <DataGridTextColumn Header="名字" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="性别" Binding="{Binding  Gender}"/>
+                    <DataGridTextColumn Header="运动员编号" Binding="{Binding   AthleteID }"/>
+                    <DataGridTextColumn Header="名字" Binding="{Binding ClassTable.ClassName}"/>
+                    <DataGridTextColumn Header="注册时间" Binding="{Binding RegistrationTime}"></DataGridTextColumn>
+
+
+
+
+                    <DataGridTemplateColumn  Header="change">
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="分配" Background="AliceBlue"
+                                          CommandParameter="{Binding RelativeSource= { RelativeSource Mode=Self}}"
+                                          Command ="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:RegistrationView},Path=DataContext.EditCommand}"
+                                           Tag="{Binding}" ></Button>
+                                    <Button Content="删除" Background="AliceBlue"
+                                              CommandParameter="{Binding RelativeSource= { RelativeSource Mode=Self}}"
+                                          Command ="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:RegistrationView},Path=DataContext.DeleteCommand}"
+                                           Tag="{Binding}"></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

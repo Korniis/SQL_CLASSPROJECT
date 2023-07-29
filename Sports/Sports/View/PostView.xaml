@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Sports.View.PostView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sports.View"
+             mc:Ignorable="d" 
+             DataContext="{Binding Source={StaticResource Locator }, Path=Post}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"></RowDefinition>
+                <RowDefinition Height="0.2*" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <DataGrid  Name="datagrid1"  CanUserAddRows="False"  AutoGenerateColumns="False" ItemsSource="{Binding AthleteTables}"  Grid.Row="0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="运动员ID" Binding="{Binding RegistrationTable.AthleteID}" IsReadOnly="True"  > </DataGridTextColumn>
+                    <DataGridTextColumn Header="运动员名字" Binding="{Binding  AthleteName}" IsReadOnly="True"  ></DataGridTextColumn>
+                    <DataGridTextColumn Header="运动项目" Binding="{Binding   MatchTable.MatchName}"  SortDirection="Ascending" IsReadOnly="True"   ></DataGridTextColumn>
+                    <DataGridTextColumn Header="班级 " Binding="{Binding  ClassTable.ClassName}" IsReadOnly="True"  ></DataGridTextColumn>
+                    <DataGridTextColumn Header="成绩 " IsReadOnly="False"  Binding="{Binding   Grade}" ></DataGridTextColumn>
+                    <DataGridTextColumn Header=" 奖 " IsReadOnly="True"  Binding="{Binding   PrizeID}" ></DataGridTextColumn>
+
+
+                    <DataGridTemplateColumn  Header="change">
+                        <DataGridTemplateColumn.CellTemplate >
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="拿将" Background="AliceBlue"
+                                          CommandParameter="{Binding RelativeSource= { RelativeSource Mode=Self}}"
+                                          Command ="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:PostView},Path=DataContext.EditCommands}"
+                                           Tag="{Binding}" ></Button>
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel  Grid.Row="1" Orientation="Horizontal">
+
+
+
+                <ComboBox  Width="100" ItemsSource="{Binding MatchTableList}" DisplayMemberPath="MatchName" SelectedValue="{Binding Athlete.MatchID}" SelectedValuePath=" MatchID" ></ComboBox>
+                <Button  Margin="60 0 0 0" Content="选择项目"  Command="{Binding SelectCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PostView}}"></Button>
+                <TextBlock Text="裁判名字:" VerticalAlignment="Center" ></TextBlock>
+                <TextBlock  VerticalAlignment="Center"  Text="{Binding  Referee.RefereeName}" Cursor=""></TextBlock>
+                <Button  Margin="60 0 0 0" Content="升序"  Command="{Binding OrderByCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PostView}}"></Button>
+                <Button  Margin="60 0 0 0" Content="降序"  Command="{Binding OrderByDownCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PostView}}" Cursor="Hand"></Button>
+                <Button  Margin="60 0 0 0" Content="print" Click="OnDataGridPrinting"/>
+                <Button HorizontalAlignment="Right"  Margin="80 0 0 0" Content="保存"  Command="{Binding UpDataCommand}" CommandParameter="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,  AncestorType=local:PostView}}"></Button>
+            </StackPanel>
+            
+        </Grid>
+    </Grid>
+</UserControl>

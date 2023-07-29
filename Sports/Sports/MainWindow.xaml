@@ -1,0 +1,187 @@
+﻿<Window x:Class="Sports.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sports"
+         DataContext="{Binding Source={StaticResource Locator},Path=Main}"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:control="clr-namespace:Sports.Control"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="运动会管理系统 " Height="700" Width="1200">
+
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="276" ></ColumnDefinition>
+
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61"/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid  Grid.Row="0" Grid.Column="0" Tag="Logo">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Offset="0" Color="#FF2BCB23"/>
+                    <GradientStop Color="#FFA4FF9F" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock   Foreground="Chocolate"  FontFamily="Matura MT Script Capitals" Block.TextAlignment="Center"  FontSize="30"    Text="sports管理系统" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid  Grid.Row="0" Grid.Column="1" Tag="Banner" Background="#FFB0D1AD">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+               
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left"  Orientation="Horizontal" VerticalAlignment="Center">
+
+                <TextBlock  FontSize="43" Text="👨‍✈️欢迎"></TextBlock>
+                <TextBlock FontSize="44" Text="{ Binding AppData.User.Name}"  Style="{DynamicResource TextBoxBanberStyle}" MouseUp="TextBlock_MouseUp_1"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock  Foreground="White" FontSize="20" Text="🔒 修改密码" Margin="0 0 10 0 " Style="{DynamicResource TextBoxBanberStyle}" MouseUp="TextBlock_MouseUp"></TextBlock>
+                <TextBlock Foreground="White" VerticalAlignment="Center" FontSize="20" Text="🏃‍ 退出系统"  Style="{DynamicResource TextBoxBanberStyle}" MouseUp="Quit_MouseUp_1"> </TextBlock>
+            </StackPanel>
+            
+        </Grid>
+        <Grid  Tag="menu" Grid.Row="1" Grid.Column="0" Background="#FFA2CF8B">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+                <RowDefinition Height="auto"/>
+
+
+            </Grid.RowDefinitions>
+            <materialDesign:Card Grid.Row="3">
+                <StackPanel>
+                    <Expander
+      Header="赛前流程">
+                        <StackPanel
+        Margin="24,8,24,16"
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                            <StackPanel Grid.Row="2"
+  Margin="4"
+  Orientation="Vertical">
+                                <RadioButton  x:Name="ClassView"  Checked="PlayerView_Checked"
+                                   
+    Margin="4"
+    Content="班级添加"
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                                <RadioButton  x:Name="RegistrationView"  Checked="PlayerView_Checked"
+                                   
+    Margin="4"
+    Content="运动员注册"
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                                <RadioButton  x:Name="MatchView"  Checked="PlayerView_Checked"
+                                   
+    Margin="4"
+    Content="项目添加"
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                               
+                                <RadioButton  x:Name= "RefereeView" Checked="PlayerView_Checked"
+    Margin="4"
+    Content="裁判报名"
+    IsChecked="False"
+   
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                                <RadioButton x:Name="PlayerView" Checked="PlayerView_Checked"
+    Margin="4"
+    Content="运动员报名"
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Expander>
+   
+                    <Expander Background="Beige"
+      HorizontalAlignment="Stretch"
+      Header="比赛进行中">
+                        <StackPanel
+        Margin="24,8,24,16"
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                            <StackPanel Grid.Row="2"
+  Margin="4"
+  Orientation="Vertical">
+                                <RadioButton  x:Name="PostView"  Checked="PlayerView_Checked"
+                                   
+    Margin="4"
+    Content="成绩录入"
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                                <RadioButton 
+    Margin="4"
+    Content=" "
+    IsChecked="False"
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" GroupName="1" />
+                                <RadioButton 
+    Margin="4"
+    Content="班级排名"
+    IsChecked="False"
+   
+    Style="{StaticResource MaterialDesignTabRadioButtonRight}" x:Name="PrizeTableView" GroupName="1" Checked="PlayerView_Checked" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Expander>
+                  
+                    <Expander Background="CadetBlue"
+      HorizontalAlignment="Stretch"
+      Header="待开发">
+                        <StackPanel
+        Margin="24,8,24,16"
+        Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                            <TextBlock
+          Text="Your Content" />
+
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </materialDesign:Card>
+            <materialDesign:ColorZone   MouseUp="ColorZone_PreviewMouseDoubleClick"    Background="AntiqueWhite" Grid.Row="1" 
+  Padding="16"
+  Mode="PrimaryLight">
+                
+               
+                <StackPanel 
+    Orientation="Horizontal">
+                      <ToggleButton x:Name="IndexView"   
+      Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    <TextBlock
+      Margin="16,0,0,0"
+      VerticalAlignment="Center"
+      ><Run Language="zh-cn" Text="首页"  FontSize="25"/></TextBlock>
+                </StackPanel>
+                
+            </materialDesign:ColorZone>
+
+
+        </Grid>
+
+        <Grid Tag="contents" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+            <ContentControl x:Name="container" Grid.RowSpan="2" Background="#FFE3ECEE" >
+
+                
+
+            </ContentControl>
+            
+        </Grid>
+    </Grid>
+</Window>
